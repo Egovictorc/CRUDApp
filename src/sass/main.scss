@@ -1,0 +1,117 @@
+html {
+    font-size: 100%;
+
+    @media only screen and (max-width: 50em) {
+        font-size: 94%;
+    }
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: mintcream;
+}
+.container {
+    width: 100%;
+}
+.header {
+    color: rgb(139, 94, 76);
+}
+.table {
+    border: 1px solid rgb(255, 220, 206);
+    margin: 0 auto;
+    text-transform: capitalize;
+    width: 96%;
+    max-width: 60rem;
+    color: maroon;
+    max-height: 4rem;
+    overflow: auto;
+
+    &__head {
+        background-color: rgb(255, 220, 206);
+        text-transform: uppercase;
+        
+    }
+    &__th{
+        background-color: lightsalmon;
+    }
+
+    &__row {
+        
+        &:nth-child(even){
+            color: #fff;
+            background-color: lightsalmon;
+        }
+
+        &:nth-child(odd) {
+            background-color: rgb(255, 220, 206);
+        }
+    }
+    &__column {
+        padding-right: 2vw;
+        &:first-child {
+            width: 2rem;
+        }
+    }
+    &__button {
+        border: 1px solid rgb(255, 220, 206);
+        padding: .6rem 1.2rem ;
+        cursor: pointer;
+
+        &--edit {
+            
+            color: limegreen;
+        }
+
+        &--delete {
+            color: red;
+            //margin-left: 1rem;   
+        }
+    }
+}
+
+.form {
+    color: rgb(189, 127, 103);
+    margin-left: 2vw;
+    
+    width: 90%;
+    //background-color: lightsalmon;
+        margin-bottom: 3vh;
+        text-transform: capitalize;
+        &__group {
+            margin: 0 auto 2vh;
+        }
+        &__label {
+            color: rgb(189, 127, 103);
+            display: block;
+        }
+    &__input {
+        border: 1px solid rgb(255, 220, 206);
+        border-radius: 5px;
+        min-width: 25rem;
+        max-width: 30rem;
+        height: 2.5rem;
+        padding-left: 2vw;
+        font-size: .8rem;
+        text-transform: capitalize;
+    }
+
+    &__button {
+        
+        padding: 1rem 1.2rem;
+        border: 1px solid lightsalmon;
+        background-color: rgb(255, 220, 206);;
+
+        &--save {
+            margin-right: 1rem;
+            color: limegreen;
+            cursor: pointer;
+            
+        }
+
+        &---cancel {
+            color: rgb(189, 127, 103);
+        }
+    }
+
+
+}

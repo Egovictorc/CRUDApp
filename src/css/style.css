@@ -1,0 +1,103 @@
+html {
+  font-size: 100%;
+}
+@media only screen and (max-width: 50em) {
+  html {
+    font-size: 94%;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: mintcream;
+}
+
+.container {
+  width: 100%;
+}
+
+.header {
+  color: #8b5e4c;
+}
+
+.table {
+  border: 1px solid #ffdcce;
+  margin: 0 auto;
+  text-transform: capitalize;
+  width: 96%;
+  max-width: 60rem;
+  color: maroon;
+  max-height: 4rem;
+  overflow: auto;
+}
+.table__head {
+  background-color: #ffdcce;
+  text-transform: uppercase;
+}
+.table__th {
+  background-color: lightsalmon;
+}
+.table__row:nth-child(even) {
+  color: #fff;
+  background-color: lightsalmon;
+}
+.table__row:nth-child(odd) {
+  background-color: #ffdcce;
+}
+.table__column {
+  padding-right: 2vw;
+}
+.table__column:first-child {
+  width: 2rem;
+}
+.table__button {
+  border: 1px solid #ffdcce;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+.table__button--edit {
+  color: limegreen;
+}
+.table__button--delete {
+  color: red;
+}
+
+.form {
+  color: #bd7f67;
+  margin-left: 2vw;
+  width: 90%;
+  margin-bottom: 3vh;
+  text-transform: capitalize;
+}
+.form__group {
+  margin: 0 auto 2vh;
+}
+.form__label {
+  color: #bd7f67;
+  display: block;
+}
+.form__input {
+  border: 1px solid #ffdcce;
+  border-radius: 5px;
+  min-width: 25rem;
+  max-width: 30rem;
+  height: 2.5rem;
+  padding-left: 2vw;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+.form__button {
+  padding: 1rem 1.2rem;
+  border: 1px solid lightsalmon;
+  background-color: #ffdcce;
+}
+.form__button--save {
+  margin-right: 1rem;
+  color: limegreen;
+  cursor: pointer;
+}
+.form__button---cancel {
+  color: #bd7f67;
+}
+
+/*# sourceMappingURL=style.css.map */
