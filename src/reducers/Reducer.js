@@ -9,7 +9,8 @@ const initState = {
     { id: 3, name: "nkiru", surname: "Ozor" }
   ],
   isEditing: false,
-  current: { ...initialValue }
+  current: { ...initialValue },
+  willWarn: false,
 };
 
 const reducer = (state = initState, action) => {
@@ -27,6 +28,7 @@ const reducer = (state = initState, action) => {
     case "RESET":
       return { ...state,
         isEditing: false,
+        willWarn: false,
         current: {...initialValue} };
 
     case "DELET":
@@ -56,6 +58,8 @@ const reducer = (state = initState, action) => {
         ...state,
         table: state.table.map( el => (el.id !== saveId) ? (el): (state.current) )
       }
+      case "WARN":
+      return Object.assign({}, state, { willWarn: true})
     default:
       return state;
   }

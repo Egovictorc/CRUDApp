@@ -14,6 +14,10 @@ const reset = ()=> {
 const delet = (id)=> {
     return {type: "DELET", id: id}
 }
+
+const warn = ()=> {
+    return { type: "WARN"}
+}
 // const currentUser = (id)=> {
 //     return {type: "CURRENTUSER", id: id}
 // }
@@ -32,4 +36,4 @@ const saveEdit = (id)=> {
     return {type: "SAVEEDIT", id: id}
 }
 
-export { increment, decrement, reset, delet, currentUser, addUser, edit, saveEdit};
+export { increment, decrement, reset, delet, currentUser, addUser, edit, saveEdit, warn};

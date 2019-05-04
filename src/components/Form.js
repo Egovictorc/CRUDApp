@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { increment, decrement, reset, delet, currentUser, addUser } from '../actionCreators/actionCreator';
+import { increment, decrement, reset, delet, currentUser, addUser, warn } from '../actionCreators/actionCreator';
 
 const mapStateToProps = state => {
     const newState = state;
     return { ...newState}
 }
-const mapDispatchToProps = { increment, decrement, reset, delet, currentUser, addUser}
+const mapDispatchToProps = { increment, decrement, reset, delet, currentUser, addUser, warn}
 
 
 const Form = (props) => {
@@ -25,7 +25,9 @@ const Form = (props) => {
         if (props.current.name && props.current.surname) {   
         props.addUser(props.current)
         props.reset()
-        }    
+        } else {
+            props.warn()
+        }
     }
  
     return (
@@ -40,7 +42,7 @@ const Form = (props) => {
                     <input  type="text" name="surname" id="surname" className="form__input" onChange={handleInput} value={props.current.surname} placeholder="Enter Surname"/>
                     
             </div>
-
+            { props.willWarn && <p style={ {fontSize: "1rem", color: "red", textTransform: "lowercase"} }> * please enter name / surname</p> }
             <button className="form__button ">save</button>
         </form>
     )

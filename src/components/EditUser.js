@@ -5,13 +5,13 @@ import * as actions from '../actionCreators/actionCreator';
 
 const mapStateToProps = state => {
     const newState = {...state};
-    return  newState 
+    return   {...newState}
 }
 
-const mapDispatchToProps = {saveEdit: actions.saveEdit, increment: actions.increment, decrement: actions.decrement, reset: actions.reset, delet: actions.delet, currentUser: actions.currentUser, addUser: actions.addUser, edit: actions.edit}
+const mapDispatchToProps = {saveEdit: actions.saveEdit, increment: actions.increment, decrement: actions.decrement, reset: actions.reset, delet: actions.delet, currentUser: actions.currentUser, addUser: actions.addUser, edit: actions.edit, warn: actions.warn}
 
 // const EditUser = ( { isEditing, saveEdit, current, currentUser }) => {
-const EditUser = ( { reset, isEditing, saveEdit, current, currentUser }) => {
+const EditUser = ( { reset, isEditing, saveEdit, current, currentUser, warn, willWarn}) => {
 
 const handleChange = (e)=> {
     const {name, value} = e.target
@@ -25,9 +25,9 @@ const handleSave = (e)=>{
     const id = current.id;
     saveEdit(id)
     reset()
-    } else {
-    const warn = document.getElementById("form__warn");
-    warn.style.display="block";
+   } else {
+    warn()
+    console.log(willWarn)
     }
 }
 const handleCancel = (e)=> {
@@ -48,7 +48,7 @@ const handleCancel = (e)=> {
                     <input type="text" name="surname" id="surname" className="form__input" value={current.surname}  onChange={handleChange} placeholder="please enter surname" />    
             </div>
             {/* validate input for name and surname */}
-            <p id="form__warn" className="form__warn--name" style={ {display: "none", color: "red", fontSize: "1rem", textTransform: "Lowercase"} }> * Please enter name / surname</p>
+            {(willWarn === true) && <p id="form__warn" className="form__warn--name" style={ { color: "red", fontSize: "1rem", textTransform: "Lowercase"} }> * Please enter name / surname</p> }
             
             <button className="form__button form__button--save">save</button>
             <button className="form__button form__button--cancel" onClick={handleCancel}>cancel</button>
